@@ -18,12 +18,17 @@ class TampilanController extends Controller
     public function index()
     {
 
-        $tampilan = DB::table('tampilan')->where('user_id', Auth::user()->id)->first();
+        $tampilan = DB::table('tampilan')->where('url', Auth::user()->url)->first();
         $acara = DB::table('acara')->where('cidnr', Auth::user()->id)->first();
-        $maps = DB::table('tampilan')->where('user_id',Auth::user()->id)->value('maps');
+        $maps = DB::table('tampilan')->where('url',Auth::user()->url)->value('maps');
+        if($maps){
         $myArray = explode(',', $maps);
       $lat =(float)$myArray[0];
       $long = (float)$myArray[1];
+        }else{
+          $lat = 0;
+          $long = 0;
+        }
         return view('edit_undangan',compact('tampilan','acara','lat','long'));
     }
 
@@ -77,6 +82,18 @@ class TampilanController extends Controller
       $tampilan->CPW = $request->CPW;
       $tampilan->user_id = Auth::user()->id;
       $tampilan->save();
+    }
+
+
+    public function pesan(Request $request)
+    {
+      $pesan = DB::table('pesan')->insert([
+        'nama' => $request->nama,
+        'status' => $request->status,
+        'pesan' => $request->pesan,
+        'cidnr' => $request->cidnr,
+    ]);
+    return redirect()->back()->with('success', 'Berhasil menambahkan data guru baru!');
     }
 
     /**
@@ -198,6 +215,11 @@ if ($request->hasFile('foto_cpw')) {
   $tampilan->foto_cpw = $image_cpw->getClientOriginalName();
   }
 
+        $tampilan->hero_check = $request->hero_check;
+        $tampilan->gallery_check = $request->gallery_check;
+        $tampilan->maps_check = $request->maps_check;
+        $tampilan->event_check = $request->event_check;
+        $tampilan->header_check = $request->header_check;
         $tampilan->judul_header = $request->judul_header;
         $tampilan->judul_hero = $request->judul_hero;
         $tampilan->sub_judul_hero = $request->sub_judul_hero;

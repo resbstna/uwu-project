@@ -93,7 +93,8 @@
           <div class="row justify-content-center mb-6">
             <div class="col-lg-6 text-center mx-auto mb-3 mb-md-5 mt-4">
               <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Fitur</h5>
-              <p class="mb-0">Klean is an elegant HTML5 template and a perfect starting point for your next SaaS oriented site, carefully curated by ThemeWagon</p>
+              <p class="mb-0">Coba Edit untuk Commit
+              </p>
             </div>
           </div>
           <div class="row circle-blend circle-blend-right circle-cyan">

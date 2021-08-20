@@ -68,7 +68,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
-              <h1 class="fw-bold display-4 fs-4 fs-lg-6 fs-xxl-7 text-gradient"> UWU</h1>
+              <h1 class="fw-bold display-4 fs-4 fs-lg-6 fs-xxl-7 text-gradient"> UWU WEDDING</h1>
               <h1 class="text-700"><span class="fw-bold">Partner Your Wedding</span></h1>
               <p class="mb-5 fs-0">Hadir sebagai solusi mempermudah dalam menyatukan orang terdekat di hari special<br />menjadi moment yang memorable.</p><a class="btn hover-top btn-glow btn-klean" href="#">Buat Undangan Anda</a>
             </div>
